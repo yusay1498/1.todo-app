@@ -1,3 +1,5 @@
+import React from "react";
+
 function Input({onAdd}) {
     const [text, setText] = React.useState('');
 
