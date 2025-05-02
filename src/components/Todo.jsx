@@ -1,5 +1,7 @@
 import {useState} from "react";
 
+const getKey = () => Math.random().toString(32).substring(2);
+
 function Todo() {
     const [items, setItems] = useState([]);
     const [filter, setFilter] = useState('ALL');
