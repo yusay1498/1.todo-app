@@ -1,0 +1,36 @@
+import {useState} from "react";
+
+function Todo() {
+    const [items, setItems] = useState([]);
+    const [filter, setFilter] = useState('ALL');
+
+    const handleAdd = text => {
+        setItems([...items, {key: getKey(), text, done: false}]);
+    }
+
+    const handleFilterChange = value => setFilter(value);
+
+    const displayItems = items.filter(items => {
+        if (filter === 'ALL') return true;
+        if (filter === 'TODO') return !items.done;
+        if (filter === 'DONE') return items.done;
+    });
+
+    const handleCheck = checkd => {
+        const newItems = items.map(item => {
+            if (item.key === checkd.key) {
+                item.done = !item.done;
+            }
+            return item;
+        });
+        setItems(newItems);
+    };
+
+    return(
+        <div className="panel">
+            <h1 className="panel-heading">
+                ⚛️ React ToDo
+            </h1>
+        </div>
+    )
+}
