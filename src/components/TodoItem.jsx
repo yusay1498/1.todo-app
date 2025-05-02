@@ -22,3 +22,5 @@ function TodoItem({ item, onCheck }) {
         </label>
     );
 }
+
+export default TodoItem;

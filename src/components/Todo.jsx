@@ -1,4 +1,7 @@
 import {useState} from "react";
+import Input from "./Input.jsx";
+import Filter from "./Filter.jsx";
+import TodoItem from "./TodoItem.jsx";
 
 const getKey = () => Math.random().toString(32).substring(2);
 
@@ -33,6 +36,23 @@ function Todo() {
             <h1 className="panel-heading">
                 ⚛️ React ToDo
             </h1>
+            <Input onAdd={handleAdd} />
+            <Filter
+                onChange={handleFilterChange}
+                value={filter}
+            />
+            {displayItems.map(item => (
+                <TodoItem
+                    key={item.text}
+                    item={item}
+                    onCheck={handleCheck}
+                />
+            ))}
+            <div className="panel-block">
+                {displayItems.length} items
+            </div>
         </div>
     )
 }
+
+export default Todo;

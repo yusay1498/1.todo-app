@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import '../assets/styles/main.scss'
+import Todo from "../components/Todo.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>Demo App</div>
+      <Todo />
     </>
   )
 }

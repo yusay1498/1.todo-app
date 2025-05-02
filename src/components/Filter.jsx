@@ -26,3 +26,5 @@ function Filter({ value, onChange }) {
         </div>
     );
 }
+
+export default Filter;
