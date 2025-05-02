@@ -1,10 +1,10 @@
 function Input({onAdd}) {
     const [text, setText] = React.useState('');
 
-    const handleChange = e => setText(e.target.value);
+    const handleChange = event => setText(event.target.value);
 
-    const handleKeyDown = e => {
-        if (e.key === 'Enter') {
+    const handleKeyDown = event => {
+        if (event.key === 'Enter') {
             onAdd(text);
             setText('');
         }

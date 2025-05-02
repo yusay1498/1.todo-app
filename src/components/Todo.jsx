@@ -16,9 +16,9 @@ function Todo() {
         if (filter === 'DONE') return items.done;
     });
 
-    const handleCheck = checkd => {
+    const handleCheck = checked => {
         const newItems = items.map(item => {
-            if (item.key === checkd.key) {
+            if (item.key === checked.key) {
                 item.done = !item.done;
             }
             return item;
